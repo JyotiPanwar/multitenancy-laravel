@@ -52,5 +52,5 @@ class BuildDatabasesForTenantsSeeder extends Seeder
             $hostname->customer()->associate($customer)->save();
             $website->customer()->associate($customer)->save();
         }
-}
+	}
 }
