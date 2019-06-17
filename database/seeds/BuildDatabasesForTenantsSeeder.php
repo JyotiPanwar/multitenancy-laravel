@@ -18,8 +18,8 @@ class BuildDatabasesForTenantsSeeder extends Seeder
     public function run()
     {
        $customers = [
-            ['database' => 'tenantnew', 'domain' => 'tenantnew.local', 'name' => 'tenantnew', 'email' => 'tenantnew@foo.com'],
-            ['database' => 'tenantnewhh', 'domain' => 'tenantnewgg.local', 'name' => 'tenantnewhh', 'email' => 'tenantnewhh@bar.com'],
+            ['database' => 'tenant1', 'domain' => 'tenant1.local', 'name' => 'tenant1', 'email' => 'tenant1@foo.com'],
+            ['database' => 'tenant2', 'domain' => 'tenant2.local', 'name' => 'tenant2', 'email' => 'tenant2@bar.com'],
         ];  
     
     	foreach ($customers as $customer) {
