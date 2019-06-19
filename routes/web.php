@@ -11,8 +11,8 @@
 |
 */
 
-use App\Customer\Models\User;
-use App\Customer\Models\Post;
+use App\Models\Customer\User;
+use App\Models\Customer\Post;
 use Hyn\Tenancy\Models\Customer;
 
 Route::get('customers', function () {

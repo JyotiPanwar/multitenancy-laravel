@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Customer\Models;
+namespace App\Models\Customer;
 
-use App\Shared\Models\User as Shared;
+use App\User as Main;
 use Hyn\Tenancy\Traits\UsesTenantConnection;
 
-class User extends Shared
+class User extends Main
 {
     use UsesTenantConnection;
     protected $with = ['posts'];
    
     public function posts()
     {
-        return $this->hasMany(\App\Customer\Models\Post::class);
+        return $this->hasMany(\App\Models\Customer\Post::class);
     }
 }
