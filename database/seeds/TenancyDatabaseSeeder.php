@@ -1,6 +1,5 @@
 <?php
 
-
 use Illuminate\Database\Seeder;
 
 class TenancyDatabaseSeeder extends Seeder
@@ -12,9 +11,9 @@ class TenancyDatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $users = factory(App\Models\Customer\User::class, 2)->create();
+        $users = factory(App\Customer\Models\User::class, 2)->create();
         $users->each(function ($user) {
-            factory(App\Models\Customer\Post::class, 3)->create(['user_id' => $user->id]);
+            factory(App\Customer\Models\Post::class, 3)->create(['user_id' => $user->id]);
         });
     }
 }

@@ -11,8 +11,8 @@
 |
 */
 
-use App\Models\Customer\User;
-use App\Models\Customer\Post;
+use App\Customer\Models\User;
+use App\Customer\Models\Post;
 use Hyn\Tenancy\Models\Customer;
 
 Route::get('customers', function () {
@@ -27,6 +27,7 @@ Route::get('users', function () {
 Route::get('/', function () {
     return view('welcome');
 });
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

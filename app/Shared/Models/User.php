@@ -1,5 +1,7 @@
 <?php
-namespace App\Models\Shared;
+
+namespace App\Shared\Models;
+
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
