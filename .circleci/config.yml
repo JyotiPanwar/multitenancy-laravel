@@ -31,11 +31,10 @@ jobs:
           name: Install PHP extensions
           command:
             sudo docker-php-ext-install pdo pdo_pgsql exif
-      - run:
-          - restore_cache:
-            keys:
-            - v1-dependencies-{{ checksum "composer.json" }}
-            - v1-dependencies-
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "composer.json" }}
+          - v1-dependencies-
       - run:
           name: Composer Install
           command: composer install -n --prefer-dist
