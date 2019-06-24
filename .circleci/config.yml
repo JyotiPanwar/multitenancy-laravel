@@ -31,9 +31,6 @@ jobs:
           name: Install PHP extensions
           command:
             sudo docker-php-ext-install pdo pdo_pgsql exif
-      - run:
-          name: Binary Packages
-          command: main/binary-amd64/Packages      
       - restore_cache:
           keys:
           - v1-dependencies-{{ checksum "composer.json" }}
