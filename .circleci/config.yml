@@ -10,7 +10,7 @@ jobs:
       - CACHE_DRIVER: file
       - DB_DRIVER: postgres
       - DB_USER: postgres
-      - DB_PASS: postgres
+      - DB_PASS: ucreate
       - DB_HOST: localhost
       - DB_PORT: 5432
       - DB_NAME: postgres
@@ -31,7 +31,8 @@ jobs:
           name: Install PHP extensions
           command:
             sudo docker-php-ext-install pdo pdo_pgsql exif
-      - restore_cache:
+      - run:
+        - restore_cache:
           keys:
           - v1-dependencies-{{ checksum "composer.json" }}
           - v1-dependencies-
