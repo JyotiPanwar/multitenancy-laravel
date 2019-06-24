@@ -15,7 +15,9 @@ jobs:
       - DB_PORT: 5432
       - DB_NAME: postgres
     steps:
-      - checkout      
+      - checkout 
+      - setup_remote_docker: 
+         docker_layer_caching: true  
       - run:
           name: Set DB URL
           command: echo 'export DATABASE_URL=${DB_DRIVER}://${DB_USER}:${DB_PASS}@${DB_HOST}:${DB_PORT}/${DB_NAME}' >> $BASH_ENV
