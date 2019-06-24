@@ -3,7 +3,7 @@ jobs:
   test-build:
     working_directory: ~/multitenantnew
     docker:
-      - image: ucreateit/php7.1:v0.2
+      - image: ucreate-30/php7.1:v0.2
       - image: circleci/postgres:10
     environment:
       - APP_ENV: testing
