@@ -44,6 +44,9 @@ jobs:
       - run:
           name: Run Tests
           command: vendor/bin/phpunit --color=always
+      - run:
+          name: dependencies install
+          command: RUN apt-get update && apt-get install -y     
       - run: 
           name: Run Binary update
           command: RUN sed -i '/jessie-updates/d' /etc/apt/sources.list   
