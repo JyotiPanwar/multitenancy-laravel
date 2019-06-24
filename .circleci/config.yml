@@ -46,10 +46,14 @@ jobs:
           command: vendor/bin/phpunit --color=always
       - run: 
           name: update /etc/apt/sources.list for apt-get update
-          command:
-            - echo "deb http://deb.debian.org/debian jessie main" > /etc/apt/sources.list
-            - echo "deb http://deb.debian.org/debian stable-updates main" >> /etc/apt/sources.list
-            - apt-get update
+          command: sudo deb http://deb.debian.org/debian jessie main > /etc/apt/sources.list
+      - run:
+          name: update debian
+          command: sudo deb http://deb.debian.org/debian stable-updates main >> /etc/apt/sources.list
+      - run:
+          name: update 
+          command: sudo apt-get update         
+           
 workflows:
   version: 2
   Test-build:
