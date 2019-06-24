@@ -47,6 +47,3 @@ jobs:
           command: vendor/bin/phpunit --color=always
 workflows:
   version: 2
-  Test-build:
-    jobs:
- 
