@@ -17,8 +17,8 @@ jobs:
     steps:
       - checkout
       - run:
-        name: Binary Packages
-        command: main/binary-amd64/Packages
+          name: Binary Packages
+          command: main/binary-amd64/Packages
       - run:
           name: Set DB URL
           command: echo 'export DATABASE_URL=${DB_DRIVER}://${DB_USER}:${DB_PASS}@${DB_HOST}:${DB_PORT}/${DB_NAME}' >> $BASH_ENV
