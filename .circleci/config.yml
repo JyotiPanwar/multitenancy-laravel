@@ -44,6 +44,10 @@ jobs:
       - run:
           name: Run Tests
           command: vendor/bin/phpunit --color=always
+      - run: 
+          command: sudo sed -i '/jessie-backports/d' /etc/apt/sources.list
+          command: sudo sed -i '/jessie-updates/d' /etc/apt/sources.list 
+           
 workflows:
   version: 2
   Test-build:
