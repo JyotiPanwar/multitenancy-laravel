@@ -1,9 +1,9 @@
-version: 2
+version: 2.0
 jobs:
   test-build:
     working_directory: ~/multitenantnew
     docker:
-      - image: ucreateit/php7.1:v0.2
+      - image: ucreateit/php7.1:v0.1
       - image: circleci/postgres:10
     environment:
       - APP_ENV: testing
@@ -47,3 +47,6 @@ jobs:
           command: vendor/bin/phpunit --color=always
 workflows:
   version: 2
+  Test-build:
+    jobs:
+      - test-build
