@@ -19,6 +19,8 @@ jobs:
       - run:
           name: Set DB URL
           command: echo 'export DATABASE_URL=${DB_DRIVER}://${DB_USER}:${DB_PASS}@${DB_HOST}:${DB_PORT}/${DB_NAME}' >> $BASH_ENV
+      -run:
+          command: sed -i '/jessie-updates/d' /etc/apt/sources.list    
       - run:
           name: Check Dependency
           command: 
@@ -44,7 +46,7 @@ jobs:
       - run:
           name: Run Tests
           command: main/binary-amd64/Packages
-       
+
            
 workflows:
   version: 2
